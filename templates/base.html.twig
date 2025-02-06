@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+    {% block stylesheets %}
+    {% endblock %}
     {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
     {% endblock %}
 </head>
 <body>
-{{ importmap() }}
-<div class="container-fluid">
-    <div class="row">
-        <!-- Sidebar (Hidden on small screens by default) -->
-            {% include 'admin/components/navigation.html.twig' %}
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <!-- Sidebar Block -->
+        <div class="col-md-3 bg-dark text-white" id="sidebar">
+            {% block sidebar %}
+                <!-- Sidebar content -->
+                <div class="sidebar-header text-center py-4">
+                    <!-- Company Icon -->
+                    <i class="fas fa-building fa-2x"></i>
+                    <!-- Company Name -->
+                    <h3 class="mt-2">Company Name</h3>
+                </div>
 
+                <!-- Navigation Menu -->
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="text-white">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">
+                            <i class="fas fa-cogs"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">
+                            <i class="fas fa-phone-alt"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            {% endblock %}
+        </div>
 
-        <!-- Main Content -->
-        <div class="col-lg-10 col-12">
-            {% block body %}{% endblock %}
+        <!-- Main Content Block -->
+        <div class="col-md-9" id="main">
+            {% block main %}
+
+            {% endblock %}
         </div>
     </div>
 </div>

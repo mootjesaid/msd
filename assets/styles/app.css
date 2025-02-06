@@ -1,12 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+html,
 body {
-    background-color: skyblue;
+    height: 100%;
 }
 
 /* assets/styles/app.css */
 .sidebar-open {
     transform: translateX(0) !important; /* Override the inline style */
+}
+
+.aside {
+    min-height: max-content;
 }

@@ -7,7 +7,8 @@ export default class extends Controller {
         const nav = this.navTarget;
 
         // Add the class to show the sidebar
-        nav.classList.add('sidebar-open');
+        nav.classList.toggle('sidebar-open');
+
     }
 
 }
