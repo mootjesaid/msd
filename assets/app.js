@@ -7,11 +7,7 @@ import './bootstrap.js';
  */
 import { Application } from '@hotwired/stimulus';
 import './styles/app.css';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import SidebarController from './controllers/sidebar_controller.js';
 
-const app = Application.start();
-app.register('sidebar', SidebarController);
+
 
 
