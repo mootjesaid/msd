@@ -35,4 +35,10 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
+    'flowbite' => [
+        'version' => '3.1.2',
+    ],
+    'flowbite-datepicker' => [
+        'version' => '1.3.2',
+    ],
 ];

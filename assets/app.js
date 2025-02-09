@@ -7,7 +7,7 @@ import './bootstrap.js';
  */
 import { Application } from '@hotwired/stimulus';
 import './styles/app.css';
-
+import { initFlowbite} from "flowbite";
 
 
 
