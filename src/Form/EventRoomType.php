@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\EventRoom;
+use App\Entity\Room;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,7 +19,7 @@ class EventRoomType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => EventRoom::class,
+            'data_class' => Room::class,
         ]);
     }
 }

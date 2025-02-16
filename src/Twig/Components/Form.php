@@ -2,7 +2,7 @@
 
 namespace App\Twig\Components;
 
-use App\Entity\EventRoom;  // Import the EventRoom entity
+use App\Entity\Room;  // Import the EventRoom entity
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
@@ -18,7 +18,7 @@ class Form extends AbstractController
 
     // Explicitly define the type for initialFormData
     #[LiveProp]
-    public ?EventRoom $initialFormData = null;  // Now specifying EventRoom as the type
+    public ?Room $initialFormData = null;  // Now specifying EventRoom as the type
     public ?string $dir = 'admin_';
 
     #[LiveProp]

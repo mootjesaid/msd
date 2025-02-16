@@ -2,9 +2,9 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\EventRoom;
+use App\Entity\Room;
 use App\Form\EventRoomType;
-use App\Repository\EventRoomRepository;
+use App\Repository\RoomRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 final class EventRoomController extends AbstractController
 {
     #[Route('/', name: 'app_admin_event_room')]
-    public function index(EventRoomRepository $eventRoomRepository): Response
+    public function index(RoomRepository $eventRoomRepository): Response
     {
         return $this->render('admin/event_room/index.html.twig', [
             'event_rooms' => $eventRoomRepository->findAll(),
@@ -26,7 +26,7 @@ final class EventRoomController extends AbstractController
     #[Route('/new', name: 'app_admin_event_room_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $eventRoom = new EventRoom();
+        $eventRoom = new Room();
         $form = $this->createEventRoomForm($eventRoom);
         $form->handleRequest($request);
 
@@ -53,7 +53,7 @@ final class EventRoomController extends AbstractController
         ]);
     }
     #[Route('/edit/{id}', name: 'app_admin_event_room_edit')]
-    public function edit(Request $request, EventRoom $eventRoom, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Room $eventRoom, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createEventRoomForm($eventRoom);
         $form->handleRequest($request);
@@ -81,7 +81,7 @@ final class EventRoomController extends AbstractController
 
 
     #[Route('/{id}', name: 'app_admin_event_room_delete', methods: ['POST'])]
-    public function delete(Request $request, EventRoom $eventRoom, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Room $eventRoom, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$eventRoom->getId(), $request->request->get('_token'))) {
             $id = $eventRoom->getId();
@@ -103,9 +103,9 @@ final class EventRoomController extends AbstractController
         return $this->redirectToRoute('app_admin_event_room', [], Response::HTTP_SEE_OTHER);
     }
 
-    private function createEventRoomForm(EventRoom $eventRoom = null): FormInterface
+    private function createEventRoomForm(Room $eventRoom = null): FormInterface
     {
-        $eventRoom = $eventRoom ?? new EventRoom();
+        $eventRoom = $eventRoom ?? new Room();
 
         return $this->createForm(EventRoomType::class, $eventRoom, [
             'action' => $eventRoom->getId() ? $this->generateUrl('app_admin_event_room_edit', ['id' => $eventRoom->getId()]) : $this->generateUrl('app_admin_event_room_new'),

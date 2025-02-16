@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -36,6 +38,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 60)]
     private ?string $lastName = null;
+
+    /**
+     * @var Collection<int, RoomReservation>
+     */
+    #[ORM\OneToMany(targetEntity: RoomReservation::class, mappedBy: 'PlannedBy', orphanRemoval: true)]
+    private Collection $spacePlanners;
+
+    public function __construct()
+    {
+        $this->spacePlanners = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -132,6 +145,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastName(string $lastName): static
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RoomReservation>
+     */
+    public function getSpacePlanners(): Collection
+    {
+        return $this->spacePlanners;
+    }
+
+    public function addSpacePlanner(RoomReservation $spacePlanner): static
+    {
+        if (!$this->spacePlanners->contains($spacePlanner)) {
+            $this->spacePlanners->add($spacePlanner);
+            $spacePlanner->setPlannedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSpacePlanner(RoomReservation $spacePlanner): static
+    {
+        if ($this->spacePlanners->removeElement($spacePlanner)) {
+            // set the owning side to null (unless already changed)
+            if ($spacePlanner->getPlannedBy() === $this) {
+                $spacePlanner->setPlannedBy(null);
+            }
+        }
 
         return $this;
     }
