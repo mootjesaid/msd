@@ -1,7 +1,0 @@
-<form method="post" action="{{ path('app_admin_event_room_delete', {'id': row.id}) }}">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ row.id) }}">
-
-    <twig:Button variant="danger">
-        Delete
-    </twig:Button>
-</form>

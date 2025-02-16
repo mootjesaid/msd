@@ -48,7 +48,7 @@ final class EventRoomController extends AbstractController
         }
 
         return $this->render('admin/event_room/new.html.twig', [
-            'event_room' => $eventRoom,
+            'entity' => $eventRoom,
             'form' => $form,
         ]);
     }
@@ -75,7 +75,7 @@ final class EventRoomController extends AbstractController
 
         return $this->render('admin/event_room/edit.html.twig', [
             'form' => $form,
-            'event_room' => $eventRoom
+            'entity' => $eventRoom
         ]);
     }
 
@@ -91,8 +91,9 @@ final class EventRoomController extends AbstractController
             $this->addFlash('success', 'EventRoom deleted!');
 
             if ($request->headers->has('turbo-frame')) {
-                $stream = $this->renderBlockView('admin/event/room/delete.html.twig', 'success_stream', [
+                $stream = $this->renderBlockView('admin/delete.html.twig', 'success_stream', [
                     'id' => $id,
+                    'entity' => $eventRoom
                 ]);
 
                 $this->addFlash('stream', $stream);
