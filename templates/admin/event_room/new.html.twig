@@ -25,7 +25,7 @@
 {% block stream_success %}
     <turbo-stream action="prepend" targets="#{{ event_room ~ '-list'}} tbody">
         <template>
-            {{ include('admin/_row.html.twig') }}
+            {{ include('admin/_row.html.twig', { row: event_room, fields: ['name'], route: 'app_admin_event_room' }) }}
         </template>
     </turbo-stream>
 {% endblock %}

@@ -12,11 +12,7 @@
         </thead>
         <tbody>
         {% for row in data %}
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200" id="{{route}}-list-item-{{ row.id }}">
-                {% for field in fields %}
-                    {{ include('admin/_row.html.twig') }}
-                {% endfor %}
-            </tr>
+            {{ include('admin/_row.html.twig') }}
         {% endfor %}
         </tbody>
     </table>
