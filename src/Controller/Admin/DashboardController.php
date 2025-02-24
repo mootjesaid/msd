@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin')]
 class DashboardController extends AbstractController{
     #[Route('/', name: 'app_admin_dashboard')]
-    public function index(): Response
+    public function calendar(): Response
     {
         return $this->render('admin/dashboard/index.html.twig', [
             'controller_name' => 'Admin/DashboardController',

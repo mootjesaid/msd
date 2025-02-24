@@ -1,38 +1,74 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-    {% block stylesheets %}
-    {% endblock %}
-    {% block javascripts %}
-        {{ importmap('app') }}
-    {% endblock %}
-</head>
-<body id="{% block body_id %}{% endblock %}" class="dark:bg-gray-800 dark:border-gray-700">
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
 
-<div class="container body-container">
-    {% block body %}
+        {# Stylesheets block: Ensure styles are included here or in child templates #}
+        {% block stylesheets %}
+            {# You can add default CSS or any external stylesheet here #}
+        {% endblock %}
+
+        {# JS Block: Include the app.js file, or other external JS files #}
+        {% block javascripts %}
+            {{ importmap('app') }}
+        {% endblock %}
+    </head>
+    <body id="{% block body_id %}main-body{% endblock %}" class="antialiased bg-gray-50 dark:bg-gray-900">
+
         {% block header %}
+            {# Ensure this header exists and has necessary components #}
             {% include 'admin/components/header.html.twig' %}
         {% endblock %}
-        <div class="row">
-            <div id="main" class="col-sm-9">
-                {% block main %}{% endblock %}
+
+        <div class="p-4 md:ml-64 h-auto pt-20">
+            {% block body %}
+                <main class="">
+                    {% block main %}
+                        {# Main content block for child templates #}
+                    {% endblock %}
+                </main>
+            {% endblock %}
+
+            {% block footer %}
+                {# Optionally include a footer here #}
+            {% endblock %}
+
+            <twig:Modal>
+                <turbo-frame
+                        id="modal"
+                        data-modal-target="dynamicContent"
+                        data-action="turbo:before-fetch-request->modal#showLoading"
+                        class="aria-busy:opacity-50 transition-opacity"
+                >
+                    {{ include('admin/_frameSuccessStreams.html.twig', { frame: 'modal' }) }}
+                </turbo-frame>
+                <twig:block name="loading_template">
+                    <div class="bg-space-pattern bg-cover rounded-lg p-8">
+                        <div class="space-y-2">
+                            <div class="h-4 bg-gray-700 rounded w-3/4 animate-pulse"></div>
+                            <div class="h-4 bg-gray-700 rounded animate-pulse"></div>
+                            <div class="h-4 bg-gray-700 rounded animate-pulse"></div>
+                            <div class="h-4"></div>
+                            <div class="h-4 bg-gray-700 rounded animate-pulse"></div>
+                            <div class="h-4 bg-gray-700 rounded w-1/2 animate-pulse"></div>
+                            <div class="h-4 bg-gray-700 rounded w-3/4 animate-pulse"></div>
+                            <div class="h-4"></div>
+                            <div class="h-4 bg-gray-700 rounded w-1/2 animate-pulse"></div>
+                        </div>
+                    </div>
+                </twig:block>
+            </twig:Modal>
+
+            <div id="flash-container">
+                {# Including flash messages template (ensure it's rendering properly) #}
+                {{ include('admin/_flashes.html.twig') }}
             </div>
+
+            {# Optional: Timezone and other date info for debugging purposes (remove if not needed) #}
+            {# Page rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} #}
         </div>
-    {% endblock %}
-</div>
-
-{% block footer %}
-
-{% endblock %}
-
-{# it's not mandatory to set the timezone in localizeddate(). This is done to
-           avoid errors when the 'intl' PHP extension is not available and the application
-           is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
-{#<!-- Page rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} -->#}
-</body>
+    </body>
 </html>
