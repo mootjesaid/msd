@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("flowbite/plugin");
 module.exports = {
   content: [
     "./vendor/tales-from-a-dev/flowbite-bundle/templates/**/*.html.twig",

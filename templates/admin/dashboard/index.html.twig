@@ -3,9 +3,16 @@
 {% block title %}Hello Admin/DashboardController!{% endblock %}
 
 {% block main %}
-    <a href="{#{{ path('app_admin_room_reservation_new') }}#}">Create new booking</a>
+{#    <a href="#}{#{{ path('app_admin_room_reservation_new') }}#}{#">Create new booking</a>#}
 
-    <div id="calendar-holder"></div>
+{#    <div id="calendar-holder" class="text-gray-900 dark:text-white"></div>#}
+
+    <div class="p-4 dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div class="mb-4 px-1 flex justify-between items-center">
+            <h1 class="text-xl font-bold">Dashboard</h1>
+        </div>
+        <div id="calendar-holder" class="bg-white dark:bg-gray-800 border-none rounded-lg p-4"></div>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
@@ -18,8 +25,9 @@
             const calendarEl = document.getElementById('calendar-holder');
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'nl',
                 initialView: 'dayGridMonth',
-                editable: true,
+                editable: false,
                 eventSources: [
                     {
                         url: "{{ path('fc_load_events') }}",

@@ -53,9 +53,10 @@ class CalendarSubscriber implements EventSubscriberInterface
              * For more information see: https://fullcalendar.io/docs/event-object
              */
             $bookingEvent->setOptions([
-                'backgroundColor' => 'red',
-                'borderColor' => 'red',
+                'backgroundColor' => 'red', // Kleur de achtergrond van het hele event
+                'display' => 'block' // Zorgt ervoor dat de kleur over de hele eventbalk komt
             ]);
+
             $bookingEvent->addOption(
                 'url',
                 $this->router->generate('app_admin_dashboard', [

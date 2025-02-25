@@ -141,6 +141,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfonycasts/tailwind-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tales-from-a-dev/flowbite-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tales-from-a-dev/twig-tailwind-extra" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/ux-live-component" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/ux-twig-component" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tattali/calendar-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
