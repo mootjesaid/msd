@@ -3,52 +3,20 @@
 {% block title %}Hello Admin/DashboardController!{% endblock %}
 
 {% block main %}
-{#    <a href="#}{#{{ path('app_admin_room_reservation_new') }}#}{#">Create new booking</a>#}
-
-{#    <div id="calendar-holder" class="text-gray-900 dark:text-white"></div>#}
-
-    <div class="p-4 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div class=" dark:bg-gray-900 text-gray-900 dark:text-white ">
         <div class="mb-4 px-1 flex justify-between items-center">
             <h1 class="text-xl font-bold">Dashboard</h1>
         </div>
-        <div id="calendar-holder" class="bg-white dark:bg-gray-800 border-none rounded-lg p-4"></div>
+        <div
+                id="calendar-holder"
+                class="bg-white dark:bg-gray-800 border-none rounded-lg sm:h-12 p-2"
+                data-controller="calendar"
+                data-calendar-events-url-value="{{ path('fc_load_events') }}"
+        ></div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }} {# Include parent JavaScript if needed #}
-
+    {{ parent() }}
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            const calendarEl = document.getElementById('calendar-holder');
-
-            const calendar = new FullCalendar.Calendar(calendarEl, {
-                locale: 'nl',
-                initialView: 'dayGridMonth',
-                editable: false,
-                eventSources: [
-                    {
-                        url: "{{ path('fc_load_events') }}",
-                        method: 'POST',
-                        extraParams: {
-                            filters: JSON.stringify({})
-                        },
-                        failure: () => {
-                            // alert('There was an error while fetching FullCalendar!');
-                        },
-                    },
-                ],
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay',
-                },
-                timeZone: 'Europe/Amsterdam',
-            });
-
-            calendar.render();
-        });
-    </script>
 {% endblock %}

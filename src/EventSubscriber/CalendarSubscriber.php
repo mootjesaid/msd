@@ -28,8 +28,7 @@ class CalendarSubscriber implements EventSubscriberInterface
         $end = $setDataEvent->getEnd();
         $filters = $setDataEvent->getFilters();
 
-        // Modify the query to fit to your entity and needs
-        // Change booking.beginAt by your start date property
+        // Modify the query to fit your entity and needs
         $bookings = $this->roomReservationRepository
             ->createQueryBuilder('booking')
             ->where('booking.beginAt BETWEEN :start and :end OR booking.endAt BETWEEN :start and :end')
@@ -39,24 +38,34 @@ class CalendarSubscriber implements EventSubscriberInterface
             ->getResult()
         ;
 
+        // Apple-like color scheme (soft pastel colors with light opacity)
+        $appleEventColors = [
+            'rgba(96, 164, 255, 0.3)', // Light blue, Apple's event
+            'rgba(255, 153, 51, 0.3)', // Light orange
+            'rgba(85, 179, 104, 0.3)', // Light green
+            'rgba(255, 159, 255, 0.3)', // Light pink
+            'rgba(255, 204, 0, 0.3)',   // Light yellow
+        ];
+
         foreach ($bookings as $booking) {
-            // this create the events with your data (here booking data) to fill calendar
+            // Create the event with the booking data
             $bookingEvent = new Event(
+                $booking->getPerson()->getFullName(),
                 $booking->getTitle(),
                 $booking->getBeginAt(),
-                $booking->getEndAt() // If the end date is null or not defined, a all day event is created.
+                $booking->getEndAt() // If the end date is null or not defined, an all-day event is created.
             );
 
-            /*
-             * Add custom options to events
-             *
-             * For more information see: https://fullcalendar.io/docs/event-object
-             */
-            $bookingEvent->setOptions([
-                'backgroundColor' => 'red', // Kleur de achtergrond van het hele event
-                'display' => 'block' // Zorgt ervoor dat de kleur over de hele eventbalk komt
-            ]);
+            // Randomly pick a color from the Apple-like color scheme
+            $randomColor = $appleEventColors[array_rand($appleEventColors)];
 
+            // Set the random background color for the event
+            $bookingEvent->setOptions([
+                'backgroundColor' => $randomColor, // Apply the random Apple-like color
+                'borderColor' => $randomColor,
+                ]);
+
+            // Add a link to the event
             $bookingEvent->addOption(
                 'url',
                 $this->router->generate('app_admin_dashboard', [
@@ -64,8 +73,9 @@ class CalendarSubscriber implements EventSubscriberInterface
                 ])
             );
 
-            // finally, add the event to the CalendarEvent to fill the calendar
+            // Add the event to the calendar
             $setDataEvent->addEvent($bookingEvent);
         }
     }
+
 }

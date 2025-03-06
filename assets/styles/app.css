@@ -15,3 +15,19 @@ body {
 .aside {
     min-height: max-content;
 }
+
+#calendar-holder {
+    height: 85vh;  /* Default height is 50% of the viewport height */
+}
+
+/* Remove white border around events */
+.fc-event {
+    border: none !important;  /* Removes the default border */
+    box-shadow: none !important;  /* Removes any shadow if applied */
+}
+
+/* Optional: If you want to add a subtle border with color, you can do so here */
+.fc-event.fc-event-compact {
+    border-radius: 8px;  /* Smooth rounded corners */
+    border: none;  /* Make sure there's no border */
+}
