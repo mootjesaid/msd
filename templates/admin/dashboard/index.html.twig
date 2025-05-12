@@ -1,22 +1,17 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}Hello Admin/DashboardController!{% endblock %}
+{% block title %}Agenda{% endblock %}
 
 {% block main %}
-    <div class=" dark:bg-gray-900 text-gray-900 dark:text-white ">
-        <div class="mb-4 px-1 flex justify-between items-center">
-            <h1 class="text-xl font-bold">Dashboard</h1>
+    <div class="dark:bg-gray-900 text-gray-900 dark:text-white p-4">
+        <h1 class="text-xl font-bold mb-4">Agenda</h1>
+        <div id="agenda-holder"
+             data-controller="agenda"
+             data-agenda-events-url-value="{{ path('fc_load_events') }}">
         </div>
-        <div
-                id="calendar-holder"
-                class="bg-white dark:bg-gray-800 border-none rounded-lg sm:h-12 p-2"
-                data-controller="calendar"
-                data-calendar-events-url-value="{{ path('fc_load_events') }}"
-        ></div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 {% endblock %}

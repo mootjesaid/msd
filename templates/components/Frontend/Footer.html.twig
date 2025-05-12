@@ -1,0 +1,59 @@
+<section class="bg-base py-4">
+    <div class="max-w-screen-xl mx-auto px-4 text-left">
+        <a href="/donate" class="inline-block bg-white text-primary font-bold px-6 py-2 rounded-lg shadow hover:bg-gray-100 transition">
+            Doneer
+        </a>
+    </div>
+</section>
+
+<footer class="p-4 bg-primary sm:p-6">
+    <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="/" class="flex items-center">
+                    <img src="{{ asset('images/logo.svg') }}" class="mr-3 h-8" alt="Logo" />
+                    <span class="self-center text-2xl font-bold whitespace-nowrap text-white">NaamStichting</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Resources</h2>
+                    <ul class="text-gray-200">
+                        <li class="mb-4">
+                            <a href="https://flowbite.com" class="hover:underline">Flowbite</a>
+                        </li>
+                        <li>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Volg ons</h2>
+                    <ul class="text-gray-200">
+                        <li class="mb-4">
+                            <a href="https://github.com/" class="hover:underline">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/" class="hover:underline">Discord</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Juridisch</h2>
+                    <ul class="text-gray-200">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacybeleid</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Algemene Voorwaarden</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-200 sm:text-center">© {{ "now"|date("Y") }} Stichting Naam. All rights reserved.</span>
+        </div>
+    </div>
+</footer>

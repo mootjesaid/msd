@@ -95,4 +95,7 @@ return [
     '@fullcalendar/multimonth/index.js' => [
         'version' => '6.1.15',
     ],
+    'dayjs' => [
+        'version' => '1.11.13',
+    ],
 ];
