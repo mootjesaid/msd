@@ -14,27 +14,27 @@
         {{ importmap('app') }}
     {% endblock %}
 </head>
-<body id="{% block body_id %}main-body{% endblock %}" class="antialiased bg-white">
+    <body id="{% block body_id %}main-body{% endblock %}" class="antialiased bg-base max-w-screen-90 mx-auto">
 
-{% block header %}
-    {% include 'components/Frontend/Navigation.html.twig' %}
-{% endblock %}
+        {% block header %}
+            {% include 'components/Frontend/Navigation.html.twig' %}
+        {% endblock %}
 
-<div class="h-auto ">
-    {% block body %}
-        <main>
-            {% block main %}{% endblock %}
-        </main>
-    {% endblock %}
-</div>
+        <div class="h-auto ">
+            {% block body %}
+                <main class="">
+                    {% block main %}{% endblock %}
+                </main>
+            {% endblock %}
+        </div>
 
-{% block footer %}
-    {% include 'components/Frontend/Footer.html.twig' %}
-{% endblock %}
+        {% block footer %}
+            {% include 'components/Frontend/Footer.html.twig' %}
+        {% endblock %}
 
-<div id="flash-container">
-    {{ include('admin/_flashes.html.twig') }}
-</div>
+        <div id="flash-container">
+            {{ include('admin/_flashes.html.twig') }}
+        </div>
 
-</body>
+    </body>
 </html>

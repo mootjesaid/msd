@@ -1,87 +1,29 @@
 {% extends 'frontend/base.html.twig' %}
 
 {% block main %}
-    <div class="flex justify-center">
-        <div class="relative w-full overflow-hidden shadow-lg">
-            <img src="{{ asset('images/mosque.jpg') }}" alt="Mosque" class="w-full object-cover h-[500px] sm:h-[600px] md:h-[700px] lg:h-[700px]">
-            <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 sm:px-8 py-10 bg-black/40">
-                <h1 class="text-base sm:text-5xl font-semibold tracking-tight">Welkom bij de Multiculturele Stichting Deventer</h1>
-                <p class="mt-6 text-p sm:text-lg font-medium text-gray-200">Een plek voor moslims van alle leeftijden om lessen te volgen, elkaar te ontmoeten en spiritueel te groeien.</p>
-                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#programs" class="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-500">Meer Informatie</a>
-                    <a href="#contact" class="text-sm font-semibold text-white">Neem contact op <span aria-hidden="true">→</span></a>
-                </div>
-            </div>
+    <section class="grid lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-5 m-4">
+            <h1 class="max-w-2xl mb-4 text-4xl text-primary font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">Multiculturele stichting voor jong en oud</h1>
+            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">Wij bieden lessen organizeren evenementen voor kinderen, jongeren en volwassenen!</p>
+            <a href="#" style="background-color: #c19a5b; color: white;" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded-lg hover:opacity-90 focus:ring-4 focus:ring-yellow-300">
+                Get started
+            </a>
         </div>
-    </div>
+        <div class="hidden lg:mt-0 lg:col-span-7 lg:flex m-4">
+            <img class="rounded-xl" src="{{ asset('images/mosque.jpg') }}" alt="Moskee">
+        </div>
+    </section>
 
-    <div class="landing-page mx-auto max-w-screen-xl lg:py-12">
-        <section>
-            <div class="flex flex-col gap-10 px-4 py-10 @container" id="programs">
-                <div class="flex flex-col gap-4">
-                    <h1 class="text-[#0e1b0e] tracking-light text-[32px] font-bold leading-tight max-w-[720px]">Onderwijsprogramma's</h1>
-                    <p class="text-[#0e1b0e] text-base font-normal leading-normal max-w-[720px]">
-                        Wij bieden een breed scala aan onderwijsprogramma's voor kinderen, jongeren en volwassenen. Onze programma's zijn ontworpen om individuen en families te helpen in hun begrip van de Islam en het toepassen van haar leringen in het dagelijks leven.
-                    </p>
-                </div>
-                <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
-                    <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e7d0] bg-[#f8fcf8] p-4 flex-col">
-                        <div class="text-[#0e1b0e]" data-icon="GraduationCap" data-size="24px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <h2 class="text-[#0e1b0e] text-base font-bold leading-tight">Kinderonderwijs</h2>
-                            <p class="text-[#4e974e] text-sm font-normal leading-normal">
-                                Onze programma's bieden een veilige en ondersteunende omgeving waarin kinderen meer leren over de Islam en zich spiritueel ontwikkelen.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e7d0] bg-[#f8fcf8] p-4 flex-col">
-                        <div class="text-[#0e1b0e]" data-icon="UsersThree" data-size="24px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <h2 class="text-[#0e1b0e] text-base font-bold leading-tight">Jongerenontwikkeling</h2>
-                            <p class="text-[#4e974e] text-sm font-normal leading-normal">
-                                Wij bieden een ruimte voor jonge moslims om elkaar te ontmoeten, meer over hun geloof te leren en betrokken te raken bij gemeenschapsdiensten.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e7d0] bg-[#f8fcf8] p-4 flex-col">
-                        <div class="text-[#0e1b0e]" data-icon="Clock" data-size="24px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <h2 class="text-[#0e1b0e] text-base font-bold leading-tight">Volwassenenonderwijs</h2>
-                            <p class="text-[#4e974e] text-sm font-normal leading-normal">
-                                Wij bieden lessen, seminars en workshops voor volwassenen die hun kennis van de Islam willen verdiepen en hun spirituele praktijk willen versterken.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <section class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 class=" mb-4 text-4xl tracking-tight font-extrabold text-primary">Neem contact met ons op</h2>
+                <p class="mb-4 text-black">Als je vragen hebt of meer wilt weten over onze programma's, neem dan contact met ons op!</p>
             </div>
-        </section>
-
-        <section id="contact">
-            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class=" mb-4 text-4xl tracking-tight font-extrabold text-primary">Neem contact met ons op</h2>
-                    <p class="mb-4 text-black">Als je vragen hebt of meer wilt weten over onze programma's, neem dan contact met ons op!</p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 mt-8">
-                    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
-                </div>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+                <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
             </div>
-        </section>
-    </div>
-
+    </section>
 {% endblock %}
 
 {% block javascripts %}

@@ -7,27 +7,17 @@ body {
     height: 100%;
 }
 
-/* assets/styles/app.css */
-.sidebar-open {
-    transform: translateX(0) !important; /* Override the inline style */
+section {
 }
 
-.aside {
-    min-height: max-content;
+div {
+    /*border: 2px dotted #000; /* Adjust color and width as needed */
+
 }
 
-#calendar-holder {
-    height: 85vh;  /* Default height is 50% of the viewport height */
-}
+section {
+    box-sizing: border-box;
+    /*border: 2px dotted #000;
+    margin: 1.25rem; /* This is equivalent to Tailwind's 'm-5' */
 
-/* Remove white border around events */
-.fc-event {
-    border: none !important;  /* Removes the default border */
-    box-shadow: none !important;  /* Removes any shadow if applied */
-}
-
-/* Optional: If you want to add a subtle border with color, you can do so here */
-.fc-event.fc-event-compact {
-    border-radius: 8px;  /* Smooth rounded corners */
-    border: none;  /* Make sure there's no border */
 }

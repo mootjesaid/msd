@@ -9,16 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        'screen-90': '85%',
+      },
       colors: {
-        primary: '#2C3930',      // Olive green
-        secondary: '#3F4F44',    // Dark green
-        base: '#DCD7C9',
-        accent: '#A27B5C',       // Accent color (tan)
-        black: '#000000',
-        text: {
-          DEFAULT: '#283618',    // Text color
-          light: '#FEFAE0',
-        }
+        primary: '#1f2937',     // Example: dark slate
+        secondary: '#333',   // Example: light gray
+        accent: '#c19a5b',      // Your gold color
+        base: '#f5f0e6',
       },
       fontFamily: {
         'body': [
