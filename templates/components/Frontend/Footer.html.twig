@@ -1,59 +1,81 @@
-<section class="bg-base py-4">
-    <div class="max-w-screen-xl mx-auto px-4 text-left">
-        <a href="/donate" class="inline-block bg-white text-primary font-bold px-6 py-2 rounded-lg shadow hover:bg-gray-100 transition">
-            Doneer
+{% block footer %}
+<section class="bg-base py-8">
+    <div class="container max-w-screen-xl mx-auto px-4 text-center">
+        <h3 class="text-2xl font-bold text-primary mb-4">Steun Onze Missie</h3>
+        <p class="text-gray-700 mb-6">Help ons bij het verspreiden van kennis en het bouwen aan een sterkere gemeenschap</p>
+        <a href="/doneer" class="inline-block bg-accent text-white font-bold px-8 py-3 rounded-lg shadow hover:bg-opacity-90 transition-all">
+            Doneer Nu
         </a>
     </div>
 </section>
 
-<footer class="p-4 bg-primary sm:p-6">
-    <div class="mx-auto max-w-screen-xl">
+<footer class="bg-primary text-white">
+    <div class="container p-8">
         <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
+            <div class="mb-8 md:mb-0">
                 <a href="/" class="flex items-center">
-                    <img src="{{ asset('images/logo.svg') }}" class="mr-3 h-8" alt="Logo" />
-                    <span class="self-center text-2xl font-bold whitespace-nowrap text-white">NaamStichting</span>
+                    <img src="{{ asset('images/logo.svg') }}" class="h-10 mr-3" alt="Logo" />
+                    <span class="self-center text-2xl font-bold text-white">Islamitisch Kenniscentrum</span>
                 </a>
+                <p class="mt-4 max-w-md text-gray-300">Samen bouwen we aan een gemeenschap van kennis, begrip en spirituele groei voor alle generaties.</p>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Resources</h2>
-                    <ul class="text-gray-200">
+                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Programma's</h2>
+                    <ul class="text-gray-300">
                         <li class="mb-4">
-                            <a href="https://flowbite.com" class="hover:underline">Flowbite</a>
+                            <a href="/kinderen" class="hover:text-accent transition-colors">Kinderen</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/jongeren" class="hover:text-accent transition-colors">Jongeren</a>
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            <a href="/volwassenen" class="hover:text-accent transition-colors">Volwassenen</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Volg ons</h2>
-                    <ul class="text-gray-200">
+                    <h2 class="mb-6 text-sm font-bold text-accent uppercase">Contact</h2>
+                    <ul class="text-gray-300">
                         <li class="mb-4">
-                            <a href="https://github.com/" class="hover:underline">Github</a>
+                            <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/locatie" class="hover:text-accent transition-colors">Locatie</a>
                         </li>
                         <li>
-                            <a href="https://discord.gg/" class="hover:underline">Discord</a>
+                            <a href="/nieuwsbrief" class="hover:text-accent transition-colors">Nieuwsbrief</a>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h2 class="mb-6 text-sm font-bold text-accent uppercase">Juridisch</h2>
-                    <ul class="text-gray-200">
+                    <ul class="text-gray-300">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Privacybeleid</a>
+                            <a href="/privacy" class="hover:text-accent transition-colors">Privacybeleid</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:underline">Algemene Voorwaarden</a>
+                            <a href="/voorwaarden" class="hover:text-accent transition-colors">Algemene Voorwaarden</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <hr class="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr class="my-8 border-gray-600" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-200 sm:text-center">© {{ "now"|date("Y") }} Stichting Naam. All rights reserved.</span>
+            <span class="text-sm text-gray-300">© {{ "now"|date("Y") }} Islamitisch Kenniscentrum. Alle rechten voorbehouden.</span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="#" class="text-gray-300 hover:text-accent">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-accent">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-accent">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+            </div>
         </div>
     </div>
 </footer>
+{% endblock %}

@@ -1,31 +1,221 @@
 {% extends 'frontend/base.html.twig' %}
 
 {% block main %}
-    <section class="grid lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-5 m-4">
-            <h1 class="max-w-2xl mb-4 text-4xl text-primary font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">Multiculturele stichting voor jong en oud</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">Wij bieden lessen organizeren evenementen voor kinderen, jongeren en volwassenen!</p>
-            <a href="#" style="background-color: #c19a5b; color: white;" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded-lg hover:opacity-90 focus:ring-4 focus:ring-yellow-300">
-                Get started
-            </a>
-        </div>
-        <div class="hidden lg:mt-0 lg:col-span-7 lg:flex m-4">
-            <img class="rounded-xl" src="{{ asset('images/mosque.jpg') }}" alt="Moskee">
+    <section class="bg-base relative lg:bg-none">
+        <!-- Mobile background image -->
+        <div class="absolute inset-0 bg-cover bg-center lg:hidden" style="background-image: url('{{ asset('images/mosque.jpg') }}'); opacity: 0.4;"></div>
+
+        <div class="relative container grid gap-8 py-12 lg:py-16 lg:grid-cols-12">
+            <div class="place-self-center lg:col-span-5">
+                <h1 class="max-w-2xl mb-4 text-3xl text-primary font-extrabold tracking-tight leading-tight md:text-4xl xl:text-6xl">
+                    Islamitisch Kenniscentrum voor Jong en Oud
+                </h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-700 md:text-lg lg:text-xl">
+                    Ontdek de schoonheid van islamitische kennis en cultuur. Samen bouwen we aan een gemeenschap van begrip en wijsheid voor alle generaties.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#programmas" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:ring-primary focus:ring-opacity-50 transition-all">
+                        Ontdek onze programma's
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-primary border-2 border-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+                        Contact
+                    </a>
+                </div>
+            </div>
+
+            <!-- Desktop image -->
+            <div class="hidden lg:flex lg:col-span-7 justify-center">
+                <img class="rounded-xl shadow-lg" src="{{ asset('images/mosque.jpg') }}" alt="Moskee">
+            </div>
         </div>
     </section>
 
-    <section class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class=" mb-4 text-4xl tracking-tight font-extrabold text-primary">Neem contact met ons op</h2>
-                <p class="mb-4 text-black">Als je vragen hebt of meer wilt weten over onze programma's, neem dan contact met ons op!</p>
+    <section class="py-12">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
+
+            <!-- Image block -->
+            <div class="h-64 md:h-96 lg:h-auto">
+                <img src="{{ asset('images/mosque.jpg') }}" alt="Voorbeeld afbeelding" class="w-full h-full object-cover">
             </div>
-            <div class="grid grid-cols-2 gap-4 mt-8">
-                <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-                <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+
+            <!-- Text block -->
+            <div class="bg-primary text-white flex flex-col justify-center p-6 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Jouw Titel Hier</h2>
+                <p class="text-base md:text-lg">Jouw tekst komt hier. Voeg hier informatie, uitleg of call to action toe.</p>
             </div>
+
+        </div>
+    </section>
+
+
+
+
+    <section id="programmas" class="py-16 bg-base">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Onze Programma's</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">Ontdek onze diverse programma's die zijn afgestemd op verschillende leeftijdsgroepen en interesses.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Kinderen (4-12 jaar)</h3>
+                    <p class="text-gray-700 mb-4">Speelse lessen over islamitische waarden, Koran recitatie en basis Arabisch.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Koranles voor kinderen
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Arabische taalles
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Islamitische etiquette
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Jongeren (13-25 jaar)</h3>
+                    <p class="text-gray-700 mb-4">Verdiepende studies, sociale activiteiten en persoonlijke ontwikkeling.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Islamitische studies
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Mentorschap
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Sociale activiteiten
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Volwassenen</h3>
+                    <p class="text-gray-700 mb-4">Lezingen, workshops en gemeenschapsactiviteiten voor continue educatie.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Tafseer sessies
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Hadith studies
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Gemeenschapsevents
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white relative overflow-hidden">
+        <div class="container">
+            <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5"></div>
+            <div class="relative">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Aankomende Evenementen</h2>
+                    <p class="text-gray-700 max-w-3xl mx-auto">Blijf op de hoogte van onze activiteiten en evenementen.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-base p-6 rounded-lg shadow-md">
+                        <div class="text-accent mb-4">
+                            <i class="fas fa-calendar text-xl"></i>
+                            <span class="ml-2 font-semibold">25 April 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Ramadan Voorbereidingslezing</h3>
+                        <p class="text-gray-700 mb-4">Speciale lezing over de spirituele en praktische voorbereiding op de Ramadan.</p>
+                        <a href="#" class="text-accent hover:text-primary transition-colors">Meer informatie →</a>
+                    </div>
+                    <div class="bg-base p-6 rounded-lg shadow-md">
+                        <div class="text-accent mb-4">
+                            <i class="fas fa-calendar text-xl"></i>
+                            <span class="ml-2 font-semibold">1 Mei 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Arabische Taalcursus</h3>
+                        <p class="text-gray-700 mb-4">Start van de nieuwe beginnerscursus Arabisch voor volwassenen.</p>
+                        <a href="#" class="text-accent hover:text-primary transition-colors">Meer informatie →</a>
+                    </div>
+                    <div class="bg-base p-6 rounded-lg shadow-md">
+                        <div class="text-accent mb-4">
+                            <i class="fas fa-calendar text-xl"></i>
+                            <span class="ml-2 font-semibold">15 Mei 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Jeugd Workshop</h3>
+                        <p class="text-gray-700 mb-4">Interactieve workshop over het leven als jonge moslim in Nederland.</p>
+                        <a href="#" class="text-accent hover:text-primary transition-colors">Meer informatie →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-base">
+        <div class="container">
+            <div class=" px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Neem Contact Met Ons Op</h2>
+                    <p class="text-gray-700 max-w-3xl mx-auto">Heeft u vragen over onze programma's of wilt u meer weten over onze gemeenschap? Neem gerust contact met ons op!</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-base text-accent">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-primary">Email</h3>
+                                    <p class="text-gray-700">info@islamitischcentrum.nl</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-base text-accent">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-primary">Telefoon</h3>
+                                    <p class="text-gray-700">+31 (0)20 123 4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-base text-accent">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-semibold text-primary">Adres</h3>
+                                    <p class="text-gray-700">Hoofdstraat 123<br>1234 AB Amsterdam</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img class="w-full h-full object-cover rounded-lg shadow-md" src="{{ asset('images/education.jpg') }}" alt="Islamitisch onderwijs">
+                        <img class="w-full h-full object-cover rounded-lg shadow-md mt-8" src="{{ asset('images/community.jpg') }}" alt="Gemeenschapsactiviteiten">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="https://kit.fontawesome.com/your-code-here.js" crossorigin="anonymous"></script>
 {% endblock %}

@@ -19,5 +19,10 @@ section {
     box-sizing: border-box;
     /*border: 2px dotted #000;
     margin: 1.25rem; /* This is equivalent to Tailwind's 'm-5' */
+}
 
+.container {
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
 }

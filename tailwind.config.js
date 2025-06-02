@@ -13,10 +13,14 @@ module.exports = {
         'screen-90': '85%',
       },
       colors: {
-        primary: '#1f2937',     // Example: dark slate
-        secondary: '#333',   // Example: light gray
-        accent: '#c19a5b',      // Your gold color
-        base: '#f5f0e6',
+        primary: '#1B4D3E',     // Deep Islamic green
+        secondary: '#8B4513',   // Rich brown
+        accent: '#C3922E',      // Golden color (representing Islamic art)
+        base: '#F7F1E5',        // Warm cream color
+        text: {
+          light: '#F7F1E5',     // Light text
+          dark: '#2D3748',      // Dark text
+        }
       },
       fontFamily: {
         'body': [
