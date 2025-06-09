@@ -1,24 +1,24 @@
 {% extends 'frontend/base.html.twig' %}
 
 {% block main %}
-    <section class="bg-base relative lg:bg-none">
+    <section class="bg-primary relative lg:bg-none">
         <!-- Mobile background image -->
         <div class="absolute inset-0 bg-cover bg-center lg:hidden" style="background-image: url('{{ asset('images/mosque.jpg') }}'); opacity: 0.4;"></div>
 
         <div class="relative container grid gap-8 py-12 lg:py-16 lg:grid-cols-12">
             <div class="place-self-center lg:col-span-5">
-                <h1 class="max-w-2xl mb-4 text-3xl text-primary font-extrabold tracking-tight leading-tight md:text-4xl xl:text-6xl">
+                <h1 class="max-w-2xl mb-4 text-3xl text-base font-extrabold tracking-tight leading-tight md:text-4xl xl:text-6xl">
                     Islamitisch Kenniscentrum voor Jong en Oud
                 </h1>
-                <p class="max-w-2xl mb-6 font-light text-gray-700 md:text-lg lg:text-xl">
+                <p class="max-w-2xl mb-6 font-light text-base md:text-lg lg:text-xl">
                     Ontdek de schoonheid van islamitische kennis en cultuur. Samen bouwen we aan een gemeenschap van begrip en wijsheid voor alle generaties.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#programmas" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:ring-primary focus:ring-opacity-50 transition-all">
+                    <a href="#programmas" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-accent rounded-lg hover:bg-opacity-90 focus:ring-4 focus:ring-primary focus:ring-opacity-50 transition-all">
                         Ontdek onze programma's
                         <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
-                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-primary border-2 border-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 text-accent font-medium border-2 border-primary rounded-lg hover:bg-primary hover:text-white transition-all">
                         Contact
                     </a>
                 </div>
@@ -31,7 +31,152 @@
         </div>
     </section>
 
-    <section class="py-12">
+    <section id="doelgroepen" class="py-24 bg-base relative overflow-hidden">
+        <div class="container">
+            <!-- subtle pattern overlay -->
+
+            <div class="relative">
+                <!-- heading -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Onze Doelgroepen</h2>
+                    <p class="text-gray-700 max-w-3xl mx-auto">
+                        Programma’s voor persoonlijke, sociale en religieuze groei – van kinderen tot volwassenen.
+                    </p>
+                </div>
+
+                <!-- cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Kidsclub -->
+                    <div class="bg-base p-6 rounded-lg border border-secondary">
+                        <div class="text-accent mb-4 flex items-center">
+                            <i class="fas fa-child text-xl"></i>
+                            <span class="ml-2 font-semibold">5–15 jaar</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Kidsclub</h3>
+                        <p class="text-gray-700 mb-4">
+                            Kinderen ontdekken spelenderwijs verschillende culturen en religieuze waarden. Plezier, sociale verbondenheid en educatieve groei staan centraal.
+                        </p>
+                    </div>
+
+                    <!-- Jongeren -->
+                    <div class="bg-base p-6 rounded-lg border border-secondary">
+                        <div class="text-accent mb-4 flex items-center">
+                            <i class="fas fa-users text-xl"></i>
+                            <span class="ml-2 font-semibold">16–25 jaar</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Jongerenactiviteiten</h3>
+                        <p class="text-gray-700 mb-4">
+                            Bijeenkomsten en groepsactiviteiten voor verdieping, saamhorigheid en eigen initiatief. Samen bouwen aan een sterke, verbonden jeugd.
+                        </p>
+                    </div>
+
+                    <!-- (Jong-)Volwassenen -->
+                    <div class="bg-base p-6 rounded-lg border border-secondary">
+                        <div class="text-accent mb-4 flex items-center">
+                            <i class="fas fa-user-tie text-xl"></i>
+                            <span class="ml-2 font-semibold">18+ jaar</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">(Jong-)Volwassenen</h3>
+                        <p class="text-gray-700 mb-4">
+                            Lezingen, culturele avonden en discussies bevorderen persoonlijke ontwikkeling, religieuze educatie en onderlinge verbondenheid.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="container">
+            <div class="max-w-screen-md mb-8 lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Activiteiten</h2>
+                <p class="text-gray-500 sm:text-xl">
+                    De Multiculturele Stichting Deventer biedt ruimte aan diverse activiteiten gericht op religieuze en sociale groei voor jong en oud. Door middel van deze activiteiten ontstaat er verbondenheid tussen verschillende culturele groepen en wordt gewerkt aan een hechte, weerbare gemeenschap.
+                </p>
+            </div>
+            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-cyan-100 lg:h-12 lg:w-12">
+                        <!-- Icon: bal -->
+                        <svg class="w-5 h-5 text-cyan-600 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M2 12h20" />
+                            <path d="M12 2a10 10 0 010 20" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Sport en spel</h3>
+                    <p class="text-gray-500">Samen bewegen bevordert gezondheid én verbondenheid binnen de gemeenschap.</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-cyan-100 lg:h-12 lg:w-12">
+                        <!-- Icon: boek -->
+                        <svg class="w-5 h-5 text-cyan-600 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Zelfontwikkeling</h3>
+                    <p class="text-gray-500">Sessies voor reflectie, bewustwording en persoonlijke groei.</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-cyan-100 lg:h-12 lg:w-12">
+                        <!-- Icon: mes en vork -->
+                        <svg class="w-5 h-5 text-cyan-600 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <line x1="8" y1="2" x2="8" y2="22" />
+                            <line x1="16" y1="2" x2="16" y2="22" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Koken en delen</h3>
+                    <p class="text-gray-500">Samen koken, recepten uitwisselen en maaltijden delen versterkt de sociale banden.</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-cyan-100 lg:h-12 lg:w-12">
+                        <!-- Icon: verfkwast -->
+                        <svg class="w-5 h-5 text-cyan-600 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M7 2l10 10-5 5-10-10z" />
+                            <circle cx="17" cy="17" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Creatieve knutselsessies</h3>
+                    <p class="text-gray-500">Creativiteit als uitlaatklep voor jong en oud.</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-cyan-100 lg:h-12 lg:w-12">
+                        <!-- Icon: boek met kruis (religie) -->
+                        <svg class="w-5 h-5 text-cyan-600 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
+                            <line x1="12" y1="8" x2="12" y2="16" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Religieuze educatie</h3>
+                    <p class="text-gray-500">Kennisdeling op het gebied van religie voor verdieping en groei.</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-cyan-100 lg:h-12 lg:w-12">
+                        <!-- Icon: presentatie -->
+                        <svg class="w-5 h-5 text-cyan-600 lg:w-6 lg:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="12" rx="1" ry="1" />
+                            <line x1="12" y1="16" x2="12" y2="20" />
+                            <line x1="8" y1="20" x2="16" y2="20" />
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-gray-900">Lezingen & bijeenkomsten</h3>
+                    <p class="text-gray-500">Interactieve lezingen en informele ontmoetingen stimuleren dialoog en integratie.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="stichting" class="pt-12">
         <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
 
             <!-- Image block -->
@@ -40,176 +185,107 @@
             </div>
 
             <!-- Text block -->
-            <div class="bg-primary text-white flex flex-col justify-center p-6 md:p-12">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">Jouw Titel Hier</h2>
-                <p class="text-base md:text-lg">Jouw tekst komt hier. Voeg hier informatie, uitleg of call to action toe.</p>
+            <div class="bg-secondary text-base flex flex-col justify-center p-6 md:p-12">
+                <h2 class="text-2xl md:text-3xl text-primary font-bold mb-4">Wie wij zijn</h2>
+                <p class=" md:text-lg">De Multiculturele Stichting Deventer is een non-profit organisatie die zich inzet voor het verbinden van mensen met verschillende culturele achtergronden. Sinds onze oprichting in 2024 creëren we ruimte voor ontmoeting, groei en educatie — met aandacht voor religieuze, sociale en maatschappelijke ontwikkeling.
+
+                    Wij organiseren bijeenkomsten en activiteiten die bijdragen aan wederzijds begrip, persoonlijke groei en saamhorigheid. Jong en oud zijn welkom om samen te leren, te delen en te bouwen aan een sterke gemeenschap waar respect, eenheid en betrokkenheid centraal staan.</p>
             </div>
 
         </div>
     </section>
 
+    <section id="missie" class="pb-12">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
 
-
-
-    <section id="programmas" class="py-16 bg-base">
-        <div class="container">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary mb-4">Onze Programma's</h2>
-                <p class="text-gray-700 max-w-3xl mx-auto">Ontdek onze diverse programma's die zijn afgestemd op verschillende leeftijdsgroepen en interesses.</p>
+            <!-- Text block -->
+            <div class="bg-base text-secondary flex flex-col justify-center p-6 md:p-12">
+                <h2 class="text-2xl md:text-3xl text-primary font-bold mb-4">Onze missie</h2>
+                <p class=" md:text-lg">Wij geloven dat een gedeelde basis van normen en waarden — ongeacht afkomst, leeftijd of sociaaleconomische status — leidt tot verbondenheid, begrip en saamhorigheid. Zo bouwen we samen aan een sterke, diverse gemeenschap.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-3">Kinderen (4-12 jaar)</h3>
-                    <p class="text-gray-700 mb-4">Speelse lessen over islamitische waarden, Koran recitatie en basis Arabisch.</p>
-                    <ul class="text-gray-700 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Koranles voor kinderen
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Arabische taalles
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Islamitische etiquette
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-3">Jongeren (13-25 jaar)</h3>
-                    <p class="text-gray-700 mb-4">Verdiepende studies, sociale activiteiten en persoonlijke ontwikkeling.</p>
-                    <ul class="text-gray-700 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Islamitische studies
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Mentorschap
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Sociale activiteiten
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-3">Volwassenen</h3>
-                    <p class="text-gray-700 mb-4">Lezingen, workshops en gemeenschapsactiviteiten voor continue educatie.</p>
-                    <ul class="text-gray-700 space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Tafseer sessies
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Hadith studies
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2"></i>
-                            Gemeenschapsevents
-                        </li>
-                    </ul>
-                </div>
+
+            <!-- Image block -->
+            <div class="h-64 md:h-96 lg:h-auto">
+                <img src="{{ asset('images/mosque.jpg') }}" alt="Voorbeeld afbeelding" class="w-full h-full object-cover">
             </div>
+
         </div>
     </section>
 
-    <section class="py-16 bg-white relative overflow-hidden">
-        <div class="container">
-            <div class="absolute inset-0 bg-[url('/images/pattern.png')] opacity-5"></div>
-            <div class="relative">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-primary mb-4">Aankomende Evenementen</h2>
-                    <p class="text-gray-700 max-w-3xl mx-auto">Blijf op de hoogte van onze activiteiten en evenementen.</p>
+    <section class="">
+        <div class="py-16 container grid lg:grid-cols-2 gap-12">
+            <!-- Links: Contactgegevens -->
+            <div class="text-primary bg-accent space-y-8">
+                <h2 class="text-3xl font-bold">Contactgegevens</h2>
+                <p>Heb je vragen? Neem contact met ons op via onderstaande gegevens.</p>
+
+                <div>
+                    <h3 class="font-semibold mb-2 text-secondary">Adres</h3>
+                    <address class="not-italic text-primary">
+                        Multiculturele Stichting Deventer<br>
+                        Stationsstraat 10<br>
+                        7411 AB Deventer<br>
+                        Nederland
+                    </address>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-base p-6 rounded-lg shadow-md">
-                        <div class="text-accent mb-4">
-                            <i class="fas fa-calendar text-xl"></i>
-                            <span class="ml-2 font-semibold">25 April 2024</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">Ramadan Voorbereidingslezing</h3>
-                        <p class="text-gray-700 mb-4">Speciale lezing over de spirituele en praktische voorbereiding op de Ramadan.</p>
-                        <a href="#" class="text-accent hover:text-primary transition-colors">Meer informatie →</a>
-                    </div>
-                    <div class="bg-base p-6 rounded-lg shadow-md">
-                        <div class="text-accent mb-4">
-                            <i class="fas fa-calendar text-xl"></i>
-                            <span class="ml-2 font-semibold">1 Mei 2024</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">Arabische Taalcursus</h3>
-                        <p class="text-gray-700 mb-4">Start van de nieuwe beginnerscursus Arabisch voor volwassenen.</p>
-                        <a href="#" class="text-accent hover:text-primary transition-colors">Meer informatie →</a>
-                    </div>
-                    <div class="bg-base p-6 rounded-lg shadow-md">
-                        <div class="text-accent mb-4">
-                            <i class="fas fa-calendar text-xl"></i>
-                            <span class="ml-2 font-semibold">15 Mei 2024</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-2">Jeugd Workshop</h3>
-                        <p class="text-gray-700 mb-4">Interactieve workshop over het leven als jonge moslim in Nederland.</p>
-                        <a href="#" class="text-accent hover:text-primary transition-colors">Meer informatie →</a>
-                    </div>
+
+                <div>
+                    <h3 class="font-semibold mb-2 text-secondary">Telefoon</h3>
+                    <p><a href="tel:+31123456789" class="hover:underline text-primary font-semibold">+31 12 345 6789</a></p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-2 text-secondary">E-mail</h3>
+                    <p><a href="mailto:info@multicultureeldeventer.nl" class="hover:underline text-primary font-semibold">info@multicultureeldeventer.nl</a></p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-2 text-secondary">Openingstijden</h3>
+                    <p>Ma - Vr: 09:00 - 17:00<br>Zaterdag en zondag gesloten</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="contact" class="py-16 bg-base">
-        <div class="container">
-            <div class=" px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-primary mb-4">Neem Contact Met Ons Op</h2>
-                    <p class="text-gray-700 max-w-3xl mx-auto">Heeft u vragen over onze programma's of wilt u meer weten over onze gemeenschap? Neem gerust contact met ons op!</p>
-                </div>
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="bg-white p-8 rounded-lg shadow-md">
-                        <div class="space-y-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-base text-accent">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h3 class="text-lg font-semibold text-primary">Email</h3>
-                                    <p class="text-gray-700">info@islamitischcentrum.nl</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-base text-accent">
-                                    <i class="fas fa-phone text-xl"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h3 class="text-lg font-semibold text-primary">Telefoon</h3>
-                                    <p class="text-gray-700">+31 (0)20 123 4567</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-base text-accent">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <h3 class="text-lg font-semibold text-primary">Adres</h3>
-                                    <p class="text-gray-700">Hoofdstraat 123<br>1234 AB Amsterdam</p>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Rechts: Contactformulier -->
+            <div>
+                <h2 class="mb-6 text-4xl font-bold text-center text-primary">Neem contact op</h2>
+                <form action="#" class="space-y-8 max-w-xl mx-auto">
+                    <div>
+                        <label for="email" class="block mb-2 font-semibold text-primary">Jouw e-mail</label>
+                        <input
+                                type="email"
+                                id="email"
+                                class="block w-full p-3 rounded-lg bg-base border border-secondary text-primary focus:ring-secondary focus:border-secondary shadow-sm"
+                                placeholder="naam@voorbeeld.com"
+                                required
+                        />
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <img class="w-full h-full object-cover rounded-lg shadow-md" src="{{ asset('images/education.jpg') }}" alt="Islamitisch onderwijs">
-                        <img class="w-full h-full object-cover rounded-lg shadow-md mt-8" src="{{ asset('images/community.jpg') }}" alt="Gemeenschapsactiviteiten">
+                    <div>
+                        <label for="subject" class="block mb-2 font-semibold text-primary">Onderwerp</label>
+                        <input
+                                type="text"
+                                id="subject"
+                                class="block w-full p-3 rounded-lg bg-base border border-secondary text-primary focus:ring-secondary focus:border-secondary shadow-sm"
+                                placeholder="Vertel ons hoe we kunnen helpen"
+                                required
+                        />
                     </div>
-                </div>
+                    <div>
+                        <label for="message" class="block mb-2 font-semibold text-primary">Bericht</label>
+                        <textarea
+                                id="message"
+                                rows="6"
+                                class="block w-full p-3 rounded-lg bg-base border border-secondary text-primary focus:ring-secondary focus:border-secondary shadow-sm"
+                                placeholder="Laat een bericht achter..."
+                                required
+                        ></textarea>
+                    </div>
+                    <button
+                            type="submit"
+                            class="block px-6 py-3 mx-auto text-white rounded-lg bg-secondary hover:bg-primary transition-colors duration-300 font-semibold focus:ring-4 focus:outline-none focus:ring-secondary"
+                    >
+                        Verstuur bericht
+                    </button>
+                </form>
             </div>
         </div>
     </section>

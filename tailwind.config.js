@@ -12,9 +12,12 @@ module.exports = {
       maxWidth: {
         'screen-90': '85%',
       },
+      borderColor: {
+        secondary: '#BF9264',
+      },
       colors: {
         primary: '#1B4D3E',     // Deep Islamic green
-        secondary: '#8B4513',   // Rich brown
+        secondary: '#BF9264',   // Rich brown
         accent: '#C3922E',      // Golden color (representing Islamic art)
         base: '#F7F1E5',        // Warm cream color
         text: {
